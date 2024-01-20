@@ -1,26 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const IMAGE_URL = "https://e7.pngegg.com/pngimages/664/210/png-clipart-uber-eats-muncheez-delivery-online-food-ordering-food-delivery-food-logo.png"
-
-const HeaderComponent = () => {
-    return (
-    <div className="header">
-        <div className="logo-container">
-            <img className="logo" src={IMAGE_URL} alt="LOGO"/>
-        </div>
-        <div className="nav-items">
-            <ul>
-                <li>Home</li>
-                <li>Cart</li>
-                <li>Contact</li>
-                <li>About Us</li>
-            </ul>
-        </div>
-    </div>
-    );
-}
-
 const restaurentData = [
     {
     "info": {
@@ -1535,39 +1512,4 @@ const restaurentData = [
     }
 ]
 
-
-const RestaurentCard = (props) => {
-    const {name, cuisines, avgRating, costForTwo, cloudinaryImageId} = props?.data?.info;
-    return (
-        <div className="rest-card">
-            <img width="100%" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId}/>
-            <h3>{name}</h3>
-            <h4>{cuisines.join(", ")}</h4>
-            <h4>{avgRating} stars</h4>
-            <h4>{costForTwo}</h4>
-        </div>
-    );
-}
-
-const BodyComponent = () => {
-    return (
-        <div className="body">
-            <div className="search">Search</div>
-            <div className="rest-container">
-                {restaurentData.map((data) => <RestaurentCard key={data.info.id} data={data} />)}
-            </div>
-        </div>
-    );
-}
-
-const AppComponent = () => {
-    return (
-        <div className="app">
-            <HeaderComponent />
-            <BodyComponent />
-        </div>
-    );
-}
-
-
-ReactDOM.createRoot(document.getElementById("root")).render(<AppComponent/>);
+export default restaurentData;
