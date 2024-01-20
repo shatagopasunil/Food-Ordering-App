@@ -1,11 +1,14 @@
 {
+  "homepage": "https://shatagopasunil.github.io/Food-Ordering-App",
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "This is namaste-react by Sunil45",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "test": "jest"
+    "test": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
