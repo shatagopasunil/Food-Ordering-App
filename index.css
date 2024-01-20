@@ -1,0 +1,43 @@
+.header {
+    display: flex;
+    border: 2px solid black;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 100px;
+    padding-top: 8px;
+}
+
+.nav-items > ul {
+    padding: 0px 20px;
+    display: flex;
+}
+
+.nav-items > ul > li {
+    font-size: 25px;
+    padding: 10px;
+    list-style: none;
+}
+
+.rest-container {
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rest-card {
+    margin: 5px;
+    padding: 5px;
+    width: 200px;
+    background-color: #f0f0f0;
+}
+
+.rest-card:hover {
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.search {
+    margin: 10px;
+}
