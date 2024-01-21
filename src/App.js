@@ -12,5 +12,4 @@ const AppComponent = () => {
     );
 }
 
-
 ReactDOM.createRoot(document.getElementById("root")).render(<AppComponent/>);
