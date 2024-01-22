@@ -29115,6 +29115,6 @@ const restaurentData = [
 ];
 exports.default = restaurentData;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["9A7zD","1xC6H","2kQhy"], "2kQhy", "parcelRequire164e")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["9A7zD","1xC6H","2kQhy"], "2kQhy", "parcelRequire5906")
 
 //# sourceMappingURL=index.7271efb6.js.map
