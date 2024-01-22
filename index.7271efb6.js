@@ -27464,45 +27464,70 @@ var _s = $RefreshSig$();
 const Body = ()=>{
     _s();
     const [restaurentDataList, setRestaurentDataList] = (0, _react.useState)([]);
+    const [initialRestaurentList, setInitialRestaurentList] = (0, _react.useState)([]);
+    const [searchText, setSearchText] = (0, _react.useState)("");
+    console.log(searchText);
     (0, _react.useEffect)(()=>{
         fetchData();
     }, []);
     const fetchData = async ()=>{
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.956924&lng=77.701127&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const restaurentData = await data.json();
-        setRestaurentDataList(restaurentData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        const restaurantList = restaurentData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        setRestaurentDataList(restaurantList);
+        setInitialRestaurentList(restaurantList);
     };
-    return restaurentDataList.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+    return initialRestaurentList.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 19,
+        lineNumber: 24,
         columnNumber: 5
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "search",
-                children: "Search"
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                type: "text",
+                className: "search-text",
+                placeholder: "Search",
+                onChange: (e)=>{
+                    setSearchText(e.target.value);
+                }
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 22,
+                lineNumber: 27,
                 columnNumber: 13
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "filter-container",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    className: "filter-btn",
-                    onClick: ()=>{
-                        setRestaurentDataList(restaurentDataList.filter((data)=>data.info.avgRating >= 4.5));
-                    },
-                    children: "Top Rated Restaurents"
-                }, void 0, false, {
-                    fileName: "src/components/Body.js",
-                    lineNumber: 24,
-                    columnNumber: 17
-                }, undefined)
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                className: "filter-btn",
+                onClick: ()=>{
+                    const filteredList = initialRestaurentList.filter((data)=>data.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                    setRestaurentDataList(filteredList);
+                },
+                children: "Submit"
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 23,
+                lineNumber: 30,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                className: "filter-btn",
+                onClick: ()=>{
+                    setRestaurentDataList(initialRestaurentList);
+                },
+                children: " Show All Restaurants "
+            }, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 35,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                className: "filter-btn",
+                onClick: ()=>{
+                    setRestaurentDataList(initialRestaurentList.filter((data)=>data.info.avgRating >= 4.5));
+                },
+                children: "Top Rated Restaurents"
+            }, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 41,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27511,22 +27536,22 @@ const Body = ()=>{
                         data: data
                     }, data.info.id, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 34,
+                        lineNumber: 50,
                         columnNumber: 51
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 33,
+                lineNumber: 49,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Body.js",
-        lineNumber: 21,
+        lineNumber: 26,
         columnNumber: 9
     }, undefined);
 };
-_s(Body, "ucE7CjmaY+4YfSK4HB/av7dnrQI=");
+_s(Body, "FzaPAoKIbKQqfvyaIHItTlu7A7k=");
 _c = Body;
 exports.default = Body;
 var _c;
