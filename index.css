@@ -61,3 +61,12 @@
     height: 400px;
     background-color: #f0f0f0;
 }
+
+.body-header {
+    display: flex;
+}
+
+.search-text {
+    padding: 5px;
+    margin: 10px 0 10px 10px;
+}
