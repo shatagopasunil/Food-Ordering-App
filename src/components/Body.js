@@ -6,7 +6,6 @@ const Body = () => {
     const [restaurentDataList, setRestaurentDataList] = useState([]);
     const [initialRestaurentList, setInitialRestaurentList] = useState([]);
     const [searchText, setSearchText] = useState("");
-    console.log(searchText);
 
     useEffect(() => {
         fetchData()
